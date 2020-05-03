@@ -1,7 +1,6 @@
 package ru.parsentev.task_001;
 
 import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 import static org.slf4j.LoggerFactory.getLogger;
 
@@ -11,11 +10,11 @@ import static org.slf4j.LoggerFactory.getLogger;
  */
 public class Calculator {
     private static final Logger log = getLogger(Calculator.class);
-    private  double res;
+    private double result;
     public double getResult() {
         try{
-            System.out.println(res);
-            return res;
+            System.out.println(result);
+            return this.result;
         }catch (UnsupportedOperationException e){
             throw new UnsupportedOperationException();
         }
@@ -23,7 +22,7 @@ public class Calculator {
 
     public void add(double first, double second) {
         try{
-            res = first+second;
+            this.result = first + second;
             System.out.println("first: " + first + " + Second: " + second + " = ");
         }catch (UnsupportedOperationException e){
             throw new UnsupportedOperationException();
@@ -32,7 +31,7 @@ public class Calculator {
 
     public void substract(double first, double second) {
         try{
-            res = first-second;
+            this.result = first - second;
             System.out.println("first: " + first + " - Second: " + second + " = ");
         }catch (UnsupportedOperationException e){
             throw new UnsupportedOperationException();
@@ -41,7 +40,7 @@ public class Calculator {
 
     public void multiple(double first, double second) {
         try {
-            res = first*second;
+            this.result = first * second;
             System.out.println("first: " + first + " * Second: " + second + " = ");
         }catch (UnsupportedOperationException e){
             throw new UnsupportedOperationException();
@@ -49,10 +48,10 @@ public class Calculator {
     }
 
     public void div(double first, double second) {
-        if (second==0)
-            throw new IllegalStateException();
+        if (second == 0d)
+            throw new IllegalStateException("Div by Zero");
         try{
-            res = first/second;
+            this.result = first / second;
             System.out.println("first: " + first + " / Second: " + second + " = ");
         }catch (UnsupportedOperationException e){
             throw new UnsupportedOperationException();
@@ -61,7 +60,7 @@ public class Calculator {
 
     public void expand(double first, double second) {
         try{
-            res = (int)Math. pow(first, second);
+            this.result = (double) Math. pow(first, second);
             System.out.println("first: " + first + " pow Second: " + second + " = ");
         }catch (UnsupportedOperationException e){
             throw new UnsupportedOperationException();

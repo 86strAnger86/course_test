@@ -11,28 +11,61 @@ import static org.slf4j.LoggerFactory.getLogger;
  */
 public class Calculator {
     private static final Logger log = getLogger(Calculator.class);
-
+    private  double res;
     public double getResult() {
-        throw new UnsupportedOperationException();
+        try{
+            System.out.println(res);
+            return res;
+        }catch (UnsupportedOperationException e){
+            throw new UnsupportedOperationException();
+        }
     }
 
     public void add(double first, double second) {
-        throw new UnsupportedOperationException();
+        try{
+            res = first+second;
+            System.out.println("first: " + first + " + Second: " + second + " = ");
+        }catch (UnsupportedOperationException e){
+            throw new UnsupportedOperationException();
+        }
     }
 
     public void substract(double first, double second) {
-        throw new UnsupportedOperationException();
+        try{
+            res = first-second;
+            System.out.println("first: " + first + " - Second: " + second + " = ");
+        }catch (UnsupportedOperationException e){
+            throw new UnsupportedOperationException();
+        }
     }
 
     public void multiple(double first, double second) {
-        throw new UnsupportedOperationException();
+        try {
+            res = first*second;
+            System.out.println("first: " + first + " * Second: " + second + " = ");
+        }catch (UnsupportedOperationException e){
+            throw new UnsupportedOperationException();
+        }
     }
 
     public void div(double first, double second) {
-        throw new UnsupportedOperationException();
+        if (second==0)
+            throw new IllegalStateException();
+        try{
+            res = first/second;
+            System.out.println("first: " + first + " / Second: " + second + " = ");
+        }catch (UnsupportedOperationException e){
+            throw new UnsupportedOperationException();
+        }
     }
 
     public void expand(double first, double second) {
-        throw new UnsupportedOperationException();
+        try{
+            res = (int)Math. pow(first, second);
+            System.out.println("first: " + first + " pow Second: " + second + " = ");
+        }catch (UnsupportedOperationException e){
+            throw new UnsupportedOperationException();
+        }
+
     }
 }
